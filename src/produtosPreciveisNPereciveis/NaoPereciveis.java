@@ -1,9 +1,10 @@
-package produtosPereciveis;
+package produtosPreciveisNPereciveis;
 
 public class NaoPereciveis extends Produto {
     private String tipo;
 
-    public NaoPereciveis(String tipo) {
+    public NaoPereciveis(String nome, double preco, String tipo) {
+        super(nome, preco, null);
         this.tipo = tipo;
     }
 
@@ -15,10 +16,19 @@ public class NaoPereciveis extends Produto {
         this.tipo = tipo;
     }
 
+
+    @Override
+    public double getPreco() {
+        return preco;
+    }
+
+
     @Override
     public String toString() {
         return "NaoPereciveis{" +
                 "tipo='" + tipo + '\'' +
+                ", preco=" + preco +
+                ", nome=" + nome +
                 '}';
     }
 }
